@@ -5,7 +5,7 @@ import logging
 import routes.home
 
 logging.basicConfig(format="%(asctime)-15s %(message)s")
-
+logging.getLogger().setLevel(logging.DEBUG)
 
 app = flask.Flask(__name__)
 app.route("/", defaults={"p": ""})(routes.home.route)

@@ -1,0 +1,12 @@
+<div>
+  <p>{{ title }}</p>
+  <div class="description" ng-transclude></div>
+  <a
+    ng-href="{{ link }}"
+    role="button"
+    class="btn btn-default"
+    ng-class="{inactive: noLink}"
+    target="_blank">
+    <span class="glyphicon glyphicon-menu-right"></span>
+  </a>
+</div>
