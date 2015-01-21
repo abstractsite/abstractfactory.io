@@ -48,12 +48,12 @@ header {
     line-height: 32px;
     margin-right: 20px;
     transition: border-bottom-color 0.1s; }
-    header a:last-child {
-      margin-right: 0; }
     header a.link {
       border-bottom: 3px solid transparent; }
       header a.link:hover {
         border-bottom-color: #C5EB87; }
+  header .contact a {
+    margin-right: 0; }
   header .contact .tooltip {
     transform: translateX(-40px); }
   header .contact .tooltip-arrow {
