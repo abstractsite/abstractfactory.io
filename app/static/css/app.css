@@ -11,7 +11,8 @@
 */
 html {
   font: 400 0.875em/1.58 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #505050; }
+  color: #505050;
+  min-width: 500px; }
   html a {
     color: #505050; }
     html a:link {
@@ -77,6 +78,7 @@ header {
       padding: 50px; }
       .sections section .features af-feature {
         position: relative;
+        min-width: 200px;
         width: 33%;
         flex-grow: 1;
         height: 200px;
@@ -110,18 +112,37 @@ header {
         .sections section .features af-feature:hover {
           transform: translateY(-2px); }
     .sections section:first-child {
+      position: relative;
       height: 100%;
       padding-bottom: 0px;
       padding-top: 0px; }
       .sections section:first-child .headline {
         position: relative;
         top: 50%;
-        transform: translateY(-50%); }
+        transform: translateY(-70%);
+        margin-left: 30px; }
+        .sections section:first-child .headline h1, .sections section:first-child .headline p {
+          text-align: left;
+          margin-left: 60px; }
+        .sections section:first-child .headline h1 {
+          font-size: 5.5em; }
+        .sections section:first-child .headline .slash {
+          position: absolute;
+          background-color: black;
+          left: 0px;
+          top: 0px;
+          width: 30px;
+          bottom: 0px;
+          transform: skewX(5deg); }
 
 .logo {
   width: 64px;
   height: 32px;
   background-image: url("../img/logo2_transparent_512x512.png");
   background-size: 64px 32px; }
+
+@media (max-width: 720px) {
+  .features {
+    flex-wrap: wrap; } }
 
 /*# sourceMappingURL=app.css.map */
