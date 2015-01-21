@@ -24,7 +24,6 @@
     app.controller("afFeatureController", function ($scope) {
         $scope.noLink = true;
         if ($scope.link) {
-            console.log($scope.link + " is set!");
             $scope.noLink = false;
         }
     });

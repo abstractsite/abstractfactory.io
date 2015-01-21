@@ -11,23 +11,22 @@
 */
 html {
   font: 400 0.875em/1.58 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #505050;
+  color: #787878;
   min-width: 500px; }
   html a {
-    color: #505050; }
+    color: #787878; }
     html a:link {
       text-decoration: none; }
     html a:hover {
-      color: #d0d0d0; }
+      color: #f8f8f8; }
     html a:visited {
-      color: #505050; }
+      color: #787878; }
   html p {
     margin: 0px;
     padding: 0px;
-    opacity: 0.7;
     transition: opacity 0.1s; }
-    html p:hover {
-      opacity: 1.0; }
+  html h1, html h2, html h3, html h4, html p {
+    cursor: default; }
 
 html, body, .wrapper {
   background-color: #fdfdfd;
@@ -47,8 +46,10 @@ header {
     display: block;
     flex-grow: 0;
     line-height: 32px;
-    margin-left: 20px;
+    margin-right: 20px;
     transition: border-bottom-color 0.1s; }
+    header a:last-child {
+      margin-right: 0; }
     header a.link {
       border-bottom: 3px solid transparent; }
       header a.link:hover {
@@ -71,7 +72,7 @@ header {
         text-align: center; }
       .sections section .headline p {
         text-align: center;
-        color: #9d9d9d; }
+        color: #c5c5c5; }
     .sections section .features {
       width: 100%;
       display: flex;
@@ -103,7 +104,7 @@ header {
         .sections section .features af-feature .description {
           padding: 30px;
           font-style: italic;
-          color: #9d9d9d; }
+          color: #c5c5c5; }
         .sections section .features af-feature .glyphicon {
           transform: scale(0.6);
           opacity: 0.5; }
@@ -126,6 +127,9 @@ header {
           margin-left: 60px; }
         .sections section:first-child .headline h1 {
           font-size: 5.5em; }
+        .sections section:first-child .headline p {
+          position: relative;
+          left: 5px; }
         .sections section:first-child .headline .slash {
           position: absolute;
           background-color: black;
@@ -136,6 +140,8 @@ header {
           transform: skewX(5deg); }
 
 .logo {
+  padding: 0;
+  margin: 0;
   width: 64px;
   height: 32px;
   background-image: url("../img/logo2_transparent_512x512.png");
