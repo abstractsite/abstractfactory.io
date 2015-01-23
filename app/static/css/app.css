@@ -80,44 +80,42 @@ header {
     header .menu .contact .tooltip-arrow {
       transform: translateX(40px); }
 
-.sections {
-  height: 100%; }
-  .sections section {
-    padding-bottom: 130px; }
-    .sections section .headline {
-      padding-top: 80px; }
-      .sections section .headline h1 {
-        font-size: 5em;
-        font-weight: 700;
-        text-transform: uppercase;
-        text-align: center; }
-      .sections section .headline p {
-        text-align: center;
-        color: #c5c5c5; }
-    .sections section#home {
+section {
+  padding-bottom: 130px; }
+  section .headline {
+    padding-top: 80px; }
+    section .headline h1 {
+      font-size: 5em;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center; }
+    section .headline p {
+      text-align: center;
+      color: #c5c5c5; }
+  section#home {
+    position: relative;
+    height: 100%;
+    padding-bottom: 0px;
+    padding-top: 0px; }
+    section#home .headline {
       position: relative;
-      height: 100%;
-      padding-bottom: 0px;
-      padding-top: 0px; }
-      .sections section#home .headline {
-        position: relative;
-        top: 100px;
-        top: 50%;
-        transform: translateY(-70%);
-        margin-left: 30px; }
-        .sections section#home .headline h1, .sections section#home .headline p {
-          text-align: left;
-          margin-left: 60px; }
-        .sections section#home .headline h1 {
-          font-size: 5.5em; }
-        .sections section#home .headline .slash {
-          position: absolute;
-          background-color: black;
-          left: 0px;
-          top: 0px;
-          width: 30px;
-          bottom: 0px;
-          transform: skewX(5deg); }
+      top: 100px;
+      top: 50%;
+      transform: translateY(-70%);
+      margin-left: 30px; }
+      section#home .headline h1, section#home .headline p {
+        text-align: left;
+        margin-left: 60px; }
+      section#home .headline h1 {
+        font-size: 5.5em; }
+      section#home .headline .slash {
+        position: absolute;
+        background-color: black;
+        left: 0px;
+        top: 0px;
+        width: 30px;
+        bottom: 0px;
+        transform: skewX(5deg); }
 
 .logo {
   padding: 0;
