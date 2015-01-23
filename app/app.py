@@ -12,10 +12,10 @@ app.route("/", defaults={"p": ""})(routes.home.route)
 app.route("/<path:p>")(routes.home.route)  # All paths route to index.html
 
 
-def debug(app):
+def debug(app, port):
     os.environ["DEVELOP"] = "true"
     app.debug = True
-    return app.run()
+    return app.run(port=port)
 
 
 def production(app):
@@ -23,4 +23,11 @@ def production(app):
 
 
 if __name__ == "__main__":
-    debug(app)
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--port", type=int, default=4000)
+
+    args = parser.parse_args()
+    print args
+
+    debug(app, **args.__dict__)

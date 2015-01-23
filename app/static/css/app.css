@@ -18,7 +18,7 @@ html {
     html a:link {
       text-decoration: none; }
     html a:hover {
-      color: #f8f8f8; }
+      color: #787878; }
     html a:visited {
       color: #787878; }
   html p {
@@ -29,35 +29,56 @@ html {
     cursor: default; }
 
 html, body, .wrapper {
-  background-color: #fdfdfd;
-  height: 100%; }
+  background-color: #fdfdfd; }
+
+.wrapper {
+  margin-top: 80px; }
 
 header {
   position: fixed;
   display: flex;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  height: 80px;
   padding: 20px;
-  width: 100%;
-  margin-right: 20px;
   background-color: rgba(253, 253, 253, 0.95);
-  z-index: 1; }
-  header .filler {
-    flex-grow: 1; }
-  header a {
-    display: block;
-    flex-grow: 0;
-    line-height: 32px;
-    margin-right: 20px;
-    transition: border-bottom-color 0.1s; }
-    header a.link {
-      border-bottom: 3px solid transparent; }
-      header a.link:hover {
-        border-bottom-color: #C5EB87; }
-  header .contact a {
-    margin-right: 0; }
-  header .contact .tooltip {
-    transform: translateX(-40px); }
-  header .contact .tooltip-arrow {
-    transform: translateX(40px); }
+  z-index: 2; }
+  header .menu {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-start;
+    /*
+      Tweaks.
+
+      The last item shouldn't have a margin.
+      We'll also slightly move the tooltip as it would otherwise
+      get obscured by the right-hand side of the window.
+
+    */ }
+    header .menu .filler {
+      flex-grow: 1; }
+    header .menu .item {
+      display: block;
+      flex-grow: 0;
+      line-height: 32px;
+      margin-right: 20px;
+      transition: border-bottom-color 0.1s;
+      z-index: 10; }
+      header .menu .item.btn {
+        padding: 5px;
+        padding-top: 0;
+        padding-bottom: 0; }
+      header .menu .item.link {
+        border-bottom: 3px solid transparent; }
+        header .menu .item.link:hover {
+          border-bottom-color: #6CADD9; }
+    header .menu .contact a {
+      margin-right: 0; }
+    header .menu .contact .tooltip {
+      transform: translateX(-40px); }
+    header .menu .contact .tooltip-arrow {
+      transform: translateX(40px); }
 
 .sections {
   height: 100%; }
@@ -73,64 +94,23 @@ header {
       .sections section .headline p {
         text-align: center;
         color: #c5c5c5; }
-    .sections section .features {
-      width: 100%;
-      display: flex;
-      padding: 50px; }
-      .sections section .features af-feature {
-        position: relative;
-        min-width: 200px;
-        width: 33%;
-        flex-grow: 1;
-        height: 200px;
-        background-color: white;
-        padding: 10px;
-        margin: 10px;
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        border-bottom: 5px solid #C5EB87;
-        text-align: center;
-        overflow: hidden;
-        transition: transform ease-out 100ms; }
-        .sections section .features af-feature p {
-          font-size: 1.1em; }
-        .sections section .features af-feature a {
-          position: absolute;
-          left: 0px;
-          right: 0px;
-          bottom: 0px;
-          margin-bottom: 30px;
-          margin-left: 70px;
-          margin-right: 70px; }
-        .sections section .features af-feature .description {
-          padding: 30px;
-          font-style: italic;
-          color: #c5c5c5; }
-        .sections section .features af-feature .glyphicon {
-          transform: scale(0.6);
-          opacity: 0.5; }
-        .sections section .features af-feature.inactive, .sections section .features af-feature .inactive {
-          visibility: hidden; }
-        .sections section .features af-feature:hover {
-          transform: translateY(-2px); }
-    .sections section:first-child {
+    .sections section#home {
       position: relative;
       height: 100%;
       padding-bottom: 0px;
       padding-top: 0px; }
-      .sections section:first-child .headline {
+      .sections section#home .headline {
         position: relative;
+        top: 100px;
         top: 50%;
         transform: translateY(-70%);
         margin-left: 30px; }
-        .sections section:first-child .headline h1, .sections section:first-child .headline p {
+        .sections section#home .headline h1, .sections section#home .headline p {
           text-align: left;
           margin-left: 60px; }
-        .sections section:first-child .headline h1 {
+        .sections section#home .headline h1 {
           font-size: 5.5em; }
-        .sections section:first-child .headline p {
-          position: relative;
-          left: 5px; }
-        .sections section:first-child .headline .slash {
+        .sections section#home .headline .slash {
           position: absolute;
           background-color: black;
           left: 0px;
@@ -146,9 +126,5 @@ header {
   height: 32px;
   background-image: url("../img/logo2_transparent_512x512.png");
   background-size: 64px 32px; }
-
-@media (max-width: 720px) {
-  .features {
-    flex-wrap: wrap; } }
 
 /*# sourceMappingURL=app.css.map */

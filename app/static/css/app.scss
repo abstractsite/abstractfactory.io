@@ -2,6 +2,8 @@
 $font-color: rgb(120, 120, 120);
 $background-color: rgb(253, 253, 253);
 $green: #C5EB87;
+$blue: #6CADD9;
+$header-height: 80px;
 
 
 @font-face { font-family: "Lato"; src: url("../font/Lato-Regular.ttf") format("truetype"); font-weight: 400; }
@@ -20,7 +22,7 @@ html {
     color: $font-color;
 
     &:link { text-decoration: none; }
-    &:hover { color: lighten($font-color, 50); }
+    &:hover { color: $font-color; }
     &:visited { color: $font-color; }
   }
 
@@ -38,53 +40,78 @@ html {
 
 html, body, .wrapper {
   background-color: $background-color;
-  height: 100%;
+}
+
+.wrapper {
+  margin-top: $header-height;
 }
 
 
 header {
   position: fixed;
   display: flex;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  height: $header-height;
   padding: 20px;
-  width: 100%;
-  margin-right: 20px;
   background-color: rgba(253, 253, 253, 0.95);
-  z-index: 1;
+  z-index: 2;
 
-  .filler {
+  .menu {
+    display: flex;
     flex-grow: 1;
-  }
+    align-items: flex-start;
 
-  a {
-    display: block;
-    flex-grow: 0;
-    line-height: 32px;
-    margin-right: 20px;
-    transition: border-bottom-color 0.1s;
+    .filler {
+      flex-grow: 1;
+    }
+
+    .item {
+      display: block;
+      flex-grow: 0;
+      line-height: 32px;
+      margin-right: 20px;
+      transition: border-bottom-color 0.1s;
+      z-index: 10;
+      
+      &.btn {
+        padding: 5px;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    
+      &.link {
+        border-bottom: 3px solid transparent;
+
+        &:hover {
+          border-bottom-color: $blue;
+        }
+      }
+    }
   
-    &.link {
-      border-bottom: 3px solid transparent;
+    /*
+      Tweaks.
 
-      &:hover {
-        border-bottom-color: $green;
+      The last item shouldn't have a margin.
+      We'll also slightly move the tooltip as it would otherwise
+      get obscured by the right-hand side of the window.
+
+    */
+    .contact {
+      a {
+        margin-right: 0;
+      }
+      .tooltip {
+        transform: translateX(-40px);
+      }
+
+      .tooltip-arrow {
+        transform: translateX(40px);
       }
     }
   }
-
-  .contact {
-    a {
-      margin-right: 0;
-    }
-    .tooltip {
-      transform: translateX(-40px);
-    }
-
-    .tooltip-arrow {
-      transform: translateX(40px);
-    }
-  }
 }
-
 
 .sections {
   height: 100%;
@@ -94,7 +121,6 @@ header {
 
     .headline {
       padding-top: 80px;
-      // padding-bottom: 80px;
 
       h1 {
         font-size: 5em;
@@ -109,62 +135,7 @@ header {
       }
     }
 
-    .features {
-      width: 100%;
-      display: flex;
-      padding: 50px;
-
-      af-feature {
-        position: relative;
-        min-width: 200px;
-        width: 33%;
-        flex-grow: 1;
-        height: 200px;
-        background-color: lighten($background-color, 100);
-        padding: 10px;
-        margin: 10px;
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        border-bottom: 5px solid $green;
-        text-align: center;
-        overflow: hidden;
-        transition: transform ease-out 100ms;
-
-        p {
-          font-size: 1.1em;
-        }
-
-        a {
-          position: absolute;
-          left: 0px;
-          right: 0px;
-          bottom: 0px;
-          margin-bottom: 30px;
-          margin-left: 70px;
-          margin-right: 70px;
-        }
-        
-        .description {
-          padding: 30px;
-          font-style: italic;
-          color: lighten($font-color, 30);
-        }
-
-        .glyphicon {
-          transform: scale(0.6);
-          opacity: 0.5;
-        }
-
-        &.inactive, .inactive {
-          visibility: hidden;
-        }
-
-        &:hover {
-          transform: translateY(-2px);
-        }
-      }
-    }
-
-    &:first-child {
+    &#home {
       position: relative;
       height: 100%;
       padding-bottom: 0px;
@@ -172,6 +143,7 @@ header {
 
       .headline {
         position: relative;
+        top: 100px;
         top: 50%;
         transform: translateY(-70%);
         margin-left: 30px;
@@ -183,13 +155,6 @@ header {
 
         h1 {
           font-size: 5.5em;
-        }
-
-        p {
-          // Slightly align the description
-          // of the main headline to the F-character.
-          position: relative;
-          left: 5px;
         }
 
         .slash {
@@ -218,9 +183,7 @@ header {
 
 
 @media (max-width: 720px) {
-  .features {
-    flex-wrap: wrap;
-  }
+
 }
 
 @media (max-width: 480px) {

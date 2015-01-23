@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html ng-app="abstractApp">
   <head>
-    <base href="/">
-    <link href="/static/favicon.ico" rel="icon" type="image/x-icon" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
+  <base href="/">
+  <link href="/static/favicon.ico" rel="icon" type="image/x-icon" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
 
-    <!-- Local stylesheets -->
-    <link rel="stylesheet" href="static/css/reset.css">
-    <link rel="stylesheet" href="static/css/app.css">
+  <!-- Local stylesheets -->
+  <link rel="stylesheet" href="static/css/reset.css">
+  <link rel="stylesheet" href="static/css/app.css">
 
-    <title>Abstract Factory</title>
+  <title>Abstract Factory</title>
   </head>
   <body>
+
+    <af-header></af-header>
 
     <div class="wrapper">
       <div ng-view style="height: 100%"></div>
@@ -21,7 +23,7 @@
     <!-- Dependencies -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script>
-  
+    
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.2/ui-bootstrap-tpls.min.js"></script>
 
@@ -35,6 +37,7 @@
     <script src="static/js/app.js"></script>
     <script src="static/js/afFeature.js"></script>
     <script src="static/js/afMarkdown.js"></script>
+    <script src="static/js/afHeader.js"></script>
 
   </body>
 </html>
