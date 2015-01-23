@@ -64,15 +64,16 @@ header {
       line-height: 32px;
       margin-right: 20px;
       transition: border-bottom-color 0.1s;
-      z-index: 10; }
+      z-index: 10;
+      border-bottom: 5px solid transparent; }
+      header .menu .item:hover {
+        border-bottom-color: #6CADD9; }
       header .menu .item.btn {
         padding: 5px;
         padding-top: 0;
         padding-bottom: 0; }
       header .menu .item.link {
         border-bottom: 3px solid transparent; }
-        header .menu .item.link:hover {
-          border-bottom-color: #6CADD9; }
     header .menu .contact a {
       margin-right: 0; }
     header .menu .contact .tooltip {
@@ -94,6 +95,9 @@ section {
       color: #c5c5c5; }
   section#home {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding-bottom: 0px;
     padding-top: 0px;
     margin-top: 150px;
@@ -109,7 +113,7 @@ section {
       left: 0px;
       top: 0px;
       width: 30px;
-      height: 250px;
+      height: 100%;
       bottom: 0px; }
 
 .logo {
